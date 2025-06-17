@@ -13,52 +13,69 @@
       font-family: 'Inter', sans-serif;
     }
     body {
-      background: #fdfcfb;
+      background: linear-gradient(to bottom, #fff7f9, #fceff1);
       color: #333;
       line-height: 1.6;
     }
     header {
-      background: #ffdde1;
-      padding: 2rem;
+      background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+      color: white;
+      padding: 4rem 2rem;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     header h1 {
-      font-size: 2.5rem;
-      color: #2a2a2a;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
     header p {
-      color: #555;
+      color: #fff;
       font-weight: 500;
     }
     nav {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 1rem;
-      background: #fff1f2;
+      background: #ffe4ec;
       padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
     nav a {
       color: #b83280;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s;
+      transition: 0.3s;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      background: #fff;
     }
     nav a:hover {
+      background: #ffdeeb;
       color: #800080;
     }
     section {
-      padding: 2rem;
-      max-width: 1000px;
+      padding: 3rem 2rem;
+      max-width: 1100px;
       margin: auto;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     section h2 {
-      font-size: 1.8rem;
-      color: #2a2a2a;
+      font-size: 2rem;
+      color: #b83280;
       margin-bottom: 1rem;
-      border-bottom: 2px solid #ffc0cb;
+      border-bottom: 3px solid #ffaad4;
       padding-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .grid {
       display: grid;
@@ -67,20 +84,36 @@
     }
     .mre-box, .cert-box, .skill-box, .interest-box, .edu-box, .project-box {
       background: #fff0f5;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: pop 0.6s ease-in-out;
+    }
+    @keyframes pop {
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
     .mre-box:hover, .cert-box:hover, .skill-box:hover, .interest-box:hover, .edu-box:hover, .project-box:hover {
-      transform: translateY(-5px);
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    .interest-box::before {
+      content: "🌟 ";
     }
     a {
-      color: #800080;
+      color: #b83280;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #ffe0eb;
+      color: #555;
+      font-size: 0.9rem;
     }
   </style>
 </head>
