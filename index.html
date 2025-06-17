@@ -4,121 +4,146 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Swetha's Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Outfit', sans-serif;
     }
     body {
-      background: linear-gradient(to bottom, #fff7f9, #fceff1);
-      color: #333;
-      line-height: 1.6;
+      background: linear-gradient(to right, #edf2fb, #e2eafc);
+      color: #1f1f1f;
     }
     header {
-      background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+      background: #1f1f1f;
       color: white;
       padding: 4rem 2rem;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     }
     header h1 {
       font-size: 3rem;
-      letter-spacing: 2px;
       text-transform: uppercase;
+      letter-spacing: 3px;
     }
     header p {
-      color: #fff;
-      font-weight: 500;
+      font-size: 1.1rem;
+      color: #ccc;
     }
     nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;
-      background: #ffe4ec;
-      padding: 1rem;
+      background: #ffffff;
+      padding: 1rem 2rem;
       position: sticky;
       top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      z-index: 999;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     }
     nav a {
-      color: #b83280;
+      color: #1f1f1f;
       text-decoration: none;
       font-weight: 600;
-      transition: 0.3s;
-      padding: 0.5rem 1rem;
-      border-radius: 12px;
-      background: #fff;
+      padding: 0.6rem 1.2rem;
+      background: #f1f3f5;
+      border-radius: 30px;
+      transition: all 0.3s;
     }
     nav a:hover {
-      background: #ffdeeb;
-      color: #800080;
+      background: #a2d2ff;
+      color: #000;
     }
     section {
-      padding: 3rem 2rem;
-      max-width: 1100px;
+      padding: 4rem 2rem;
+      max-width: 1200px;
       margin: auto;
-      animation: fadeIn 1s ease-in-out;
+      animation: slideUp 0.8s ease;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     section h2 {
       font-size: 2rem;
-      color: #b83280;
-      margin-bottom: 1rem;
-      border-bottom: 3px solid #ffaad4;
-      padding-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      color: #1f1f1f;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #4361ee;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
-    .mre-box, .cert-box, .skill-box, .interest-box, .edu-box, .project-box {
-      background: #fff0f5;
-      padding: 1.5rem;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      animation: pop 0.6s ease-in-out;
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+      transition: all 0.3s;
     }
-    @keyframes pop {
-      0% { transform: scale(0.95); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
     }
-    .mre-box:hover, .cert-box:hover, .skill-box:hover, .interest-box:hover, .edu-box:hover, .project-box:hover {
-      transform: scale(1.03);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    .card h3 {
+      margin-bottom: 1rem;
+      color: #3a0ca3;
     }
-    .interest-box::before {
-      content: "🌟 ";
+    .card a {
+      color: #4361ee;
+      font-weight: 500;
     }
-    a {
-      color: #b83280;
-      text-decoration: none;
-    }
-    a:hover {
+    .card a:hover {
       text-decoration: underline;
     }
     footer {
       text-align: center;
       padding: 2rem;
-      background: #ffe0eb;
-      color: #555;
       font-size: 0.9rem;
+      background: #f8f9fa;
+      color: #333;
     }
   </style>
 </head>
 <body>
   <header>
+    <h1>Swetha P V</h1>
+    <p>Java Full Stack Developer | Tech Enthusiast | Creative Coder</p>
+  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>I’m an energetic full stack Java developer passionate about building responsive, scalable web apps. I enjoy combining logic and creativity in everything I build — from backend APIs to beautiful frontends. Outside of code, I love dancing and digital art.</p>
+    </div>
+  </section>
+  <!-- You can add your other sections using the class="card" inside each .grid -->
+  <footer>
+    <p>© 2025 Swetha P V. Built with ❤️ and lots of coffee.</p>
+ 
+
     <h1>Swetha P V</h1>
     <p>Java Full Stack Developer</p>
     <p>📞 +91 6305518403 | 📧 swethapv03@gmail.com</p>
